@@ -1,21 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.28;
 
-// Uncomment this line to use console.log
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 
 struct Fund {
     uint256 value;
     address owner;
 }
 
-contract Lock {
+contract GoFundMe {
     // address payable public owner;
     mapping(string => Fund) public mapOfFunds;
-
-    // constructor() payable {
-    //     owner = payable(msg.sender);0-
-    // }
 
     function createFund(string memory _name, uint256 _initialFunds) public {
         mapOfFunds[_name] = Fund(_initialFunds, msg.sender);
